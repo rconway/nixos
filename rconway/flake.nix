@@ -18,6 +18,8 @@
           pkgs.zsh
           pkgs.lazydocker
           pkgs.duf
+          pkgs.k3d
+          pkgs.k9s
         ];
       };
     };
