@@ -2,6 +2,9 @@ name: Update flake rconway
 
 on:
   workflow_dispatch:   # manual trigger
+  push:
+    paths:
+      - 'rconway/flake.nix'
   schedule:
     - cron: "0 6 * * *"   # optional: run daily at 06:00 UTC
 
