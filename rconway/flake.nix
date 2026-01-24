@@ -17,6 +17,7 @@
           pkgs.p7zip
           pkgs.zsh
           pkgs.lazydocker
+          pkgs.duf
         ];
       };
     };
