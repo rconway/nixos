@@ -1,0 +1,36 @@
+name: Update flake rconway
+
+on:
+  workflow_dispatch:   # manual trigger
+  schedule:
+    - cron: "0 6 * * *"   # optional: run daily at 06:00 UTC
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write   # required to push changes
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v27
+
+      - name: Update flake.lock
+        run: nix flake update --commit-lock-file --flake ./rconway
+
+      - name: Check if lockfile changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+
+      - name: Push changes
+        run: |
+          git push
