@@ -33,6 +33,7 @@
           pkgs.duf
           pkgs.k3d
           pkgs.k9s
+          pkgs.gotop
         ];
       };
     };
