@@ -7,9 +7,22 @@
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+
+      # Human-readable version metadata
+      version =
+        if self ? rev
+        then builtins.substring 0 7 self.rev
+        else "dev";
     in {
       packages.${system}.rconway = pkgs.buildEnv {
-        name = "rconway";
+        name = "rconway-${version}";
+
+        # Optional but nice: include version metadata
+        meta = {
+          inherit version;
+          description = "RConway profile";
+        };
+
         paths = [
           pkgs.btop
           pkgs.docker-compose
