@@ -35,6 +35,7 @@
           pkgs.k9s
           pkgs.gotop
           pkgs.gtop
+          pkgs.kubectl
         ];
       };
     };
