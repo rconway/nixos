@@ -36,6 +36,9 @@
           pkgs.gotop
           pkgs.gtop
           pkgs.kubectl
+          pkgs.kubernetes-helm
+          pkgs.kustomize
+          pkgs.gomplate
         ];
       };
     };
