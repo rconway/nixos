@@ -30,6 +30,7 @@
           pkgs.p7zip
           pkgs.zsh
           pkgs.lazydocker
+          pkgs.lazygit
           pkgs.duf
           pkgs.k3d
           pkgs.k9s
