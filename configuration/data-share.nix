@@ -7,7 +7,7 @@
   # do not have the data partition. On those hosts, /home/rconway/data is
   # used as a local fallback directory.
   fileSystems."/home/rconway/data" = {
-    device = "/dev/disk/by-uuid/b874f47f-8ae8-42dc-8ce6-9ef471cdbd2c";
+    device = "/dev/disk/by-partlabel/data";
     fsType = "btrfs";
     options = [
       "subvol=/@data/@rconway"
