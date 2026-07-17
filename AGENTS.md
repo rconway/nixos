@@ -47,6 +47,10 @@
 - `nix profile upgrade rconway`
 - `nix profile remove rconway`
 
+## Default Scope
+- Unless explicitly told otherwise, assume all changes are scoped to `configuration/` (NixOS config only).
+- Do not modify `rconway/flake.nix` or related profile files unless the user specifically requests it.
+
 ## Editing Guidance For Future Sessions
 - Prefer small edits in module-specific files over broad edits in `configuration/configuration.nix`.
 - Keep optional mount fallback semantics intact unless asked to change behavior.
