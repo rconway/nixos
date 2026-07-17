@@ -66,6 +66,14 @@
 
   # zsh
   programs.zsh.enable = true;
+  programs.zsh.interactiveShellInit = ''
+    DISABLE_MAGIC_FUNCTIONS="true"
+  '';
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    theme = "bira";
+    plugins = [ ];
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
