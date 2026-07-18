@@ -23,6 +23,7 @@
     insync-nautilus
 
     # utils
+    efibootmgr
     dnsutils
     p7zip
     openssl
