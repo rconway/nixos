@@ -20,10 +20,6 @@
       title   EndeavourOS
       efi     /EFI/endeavouros/grubx64.efi
     '';
-    "windows.conf" = ''
-      title   Windows
-      efi     /EFI/Microsoft/Boot/bootmgfw.efi
-    '';
   };
 
   networking.hostName = "nixpad"; # Define your hostname.
