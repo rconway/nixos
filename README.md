@@ -6,6 +6,10 @@ This repository contains Nix-related artefacts:
 
   Contains reusable NixOS configuration files. It is structured to allow for easy customisation and management.
 
+* `hosts/`
+
+  Contains host-specific NixOS configuration files (e.g. `hosts/nixpad.nix`). On each host, `/etc/nixos/configuration.nix` is a symlink to the appropriate file here.
+
 * `rconway/`
 
   Contains a nix flake for installation of nix packages on non-NixOS platforms

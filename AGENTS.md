@@ -7,7 +7,8 @@
 
 ## Structure And Ownership
 - Primary composition entrypoint: `configuration/configuration.nix`.
-- Host bootstrap file: `configuration/_configuration.nix` (imports hardware config and shared config).
+- Host-specific configs live in `hosts/<hostname>.nix` (e.g. `hosts/nixpad.nix`). These ARE in the repo and are the correct place to edit host-specific settings like bootloader, hostname, and stateVersion.
+- `/etc/nixos/configuration.nix` is a symlink to the appropriate `hosts/<hostname>.nix` file.
 - Cross-platform profile entrypoint: `rconway/flake.nix`.
 - Profile usage docs: `rconway/README.md`.
 
@@ -33,7 +34,6 @@
 ## Important Behavior Constraints
 - `data-share.nix` intentionally keeps mount optional (`nofail`) for hosts without that disk.
 - `tailscale.nix` uses systemd unit ordering for DNS resolver behavior.
-- `configuration/_configuration.nix` currently references an absolute path import that is host-local.
 
 ## Package Management Split
 - NixOS host packages live in `configuration/packages.nix`.
@@ -55,4 +55,4 @@
 - Prefer small edits in module-specific files over broad edits in `configuration/configuration.nix`.
 - Keep optional mount fallback semantics intact unless asked to change behavior.
 - Be careful changing systemd ordering in tailscale/resolver logic.
-- Keep host config (`_configuration.nix`) and shared config (`configuration.nix`) concerns separated.
+- Keep host config (`hosts/<hostname>.nix`) and shared config (`configuration/configuration.nix`) concerns separated.
