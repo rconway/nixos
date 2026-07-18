@@ -16,6 +16,7 @@
       ./tailscale.nix
       ./packages.nix
       ./gnome-extensions.nix
+      ./home-manager.nix
     ];
 
   # Firmware safety net - if needed
