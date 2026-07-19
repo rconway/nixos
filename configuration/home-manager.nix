@@ -2,6 +2,7 @@
 
 let
   home-manager = builtins.fetchTarball https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz;
+  username = "rconway";
 in
 {
   imports =
@@ -11,7 +12,11 @@ in
 
   home-manager.backupFileExtension = "hm-backup";
 
-  home-manager.users.rconway = { pkgs, config, ... }: {
+  home-manager.users.${username} = { pkgs, config, ... }:
+  let
+    gnomeTerminalDefaultProfileId = "b1dcc9dd-5262-4d8d-a863-c897e6d979b9";
+  in
+  {
     # home.packages = [ pkgs.atool pkgs.httpie ];
     programs.zsh = {
       enable = true;
@@ -38,6 +43,26 @@ in
       extraConfig = ''
         set mouse-=a
       '';
+    };
+
+    programs.gnome-terminal = {
+      enable = true;
+      profile = {
+        "${gnomeTerminalDefaultProfileId}" = {
+          default = true;
+          visibleName = config.home.username;
+          loginShell = true;
+        };
+      };
+    };
+
+    # Home Manager's gnome-terminal module does not expose default-size options.
+    # Keep dconf usage scoped only to window size.
+    dconf.settings = {
+      "org/gnome/terminal/legacy/profiles:/:${gnomeTerminalDefaultProfileId}" = {
+        default-size-columns = 132;
+        default-size-rows = 40;
+      };
     };
 
     home.file.".ssh/config".source =
