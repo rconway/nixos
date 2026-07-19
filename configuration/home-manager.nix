@@ -63,6 +63,54 @@ in
         default-size-columns = 132;
         default-size-rows = 40;
       };
+
+      "org/gnome/shell" = {
+        enabled-extensions = [
+          pkgs.gnomeExtensions.dash-to-dock.extensionUuid
+          pkgs.gnomeExtensions.bing-wallpaper-changer.extensionUuid
+          pkgs.gnomeExtensions.coverflow-alt-tab.extensionUuid
+          pkgs.gnomeExtensions.clipboard-history.extensionUuid
+          pkgs.gnomeExtensions.quick-settings-audio-panel.extensionUuid
+          pkgs.gnomeExtensions.steal-my-focus-window.extensionUuid
+        ];
+      };
+
+      "org/gnome/shell/extensions/clipboard-history" = {
+        display-mode = 0;
+      };
+
+      "org/gnome/shell/extensions/dash-to-dock" = {
+        apply-custom-theme = false;
+        background-opacity = 0.8;
+        click-action = "focus-minimize-or-appspread";
+        custom-theme-shrink = true;
+        dash-max-icon-size = 32;
+        disable-overview-on-startup = true;
+        dock-fixed = true;
+        dock-position = "LEFT";
+        extend-height = true;
+        height-fraction = 0.9;
+        multi-monitor = true;
+        preferred-monitor = -2;
+        preferred-monitor-by-connector = "eDP-1";
+        scroll-action = "switch-workspace";
+        show-mounts = false;
+        show-trash = false;
+        transparency-mode = "FIXED";
+      };
+
+      # Keep Bing wallpaper declarative for stable preferences only.
+      # Excludes dynamic keys (bing-json, selected-image, state) that change daily.
+      "org/gnome/shell/extensions/bingwallpaper" = {
+        delete-previous = true;
+        download-folder = "~/Pictures/BingWallpaper/";
+        icon-name = "bing-symbolic";
+      };
+
+      "org/gnome/shell/extensions/quick-settings-audio-panel" = {
+        always-show-input-volume-slider = true;
+        version = 2;
+      };
     };
 
     home.file.".ssh/config".source =
