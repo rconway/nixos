@@ -1,5 +1,15 @@
 { config, pkgs, lib, ... }:
 
+let
+  # Prerequisite setup...
+  # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+  # sudo nix-channel --update nixos-unstable
+  
+  unstable = import <nixos-unstable> {
+    system = pkgs.stdenv.hostPlatform.system;
+    config.allowUnfree = true;
+  };
+in
 {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -29,8 +39,8 @@
     openssl
     htop
     isd
-    atuin
-    tailscale
+    unstable.atuin
+    unstable.tailscale
     gparted
     tldr
     smartmontools
@@ -43,12 +53,12 @@
     socat
 
     # dev
-    vscode
+    unstable.vscode
     meld
     postman
     docker-compose
     python3
-    uv
+    unstable.uv
     jq yq
     gh
     go
@@ -61,7 +71,7 @@
     kubectl
     kustomize
     kubernetes-helm
-    k9s
+    unstable.k9s
     k3d
     kind
     pluto
