@@ -37,6 +37,11 @@
     nvd
     duf
 
+    # GitHub Copilot wants these...
+    ripgrep
+    bubblewrap
+    socat
+
     # dev
     vscode
     meld
