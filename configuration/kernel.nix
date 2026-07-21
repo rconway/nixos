@@ -2,7 +2,7 @@
 
 {
   # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.kernelModules = [
     # 🔧 Core networking and container support
