@@ -111,6 +111,25 @@ in
         always-show-input-volume-slider = true;
         version = 2;
       };
+
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        ];
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+        binding = "<Primary><Alt>t";
+        command = "gnome-terminal";
+        name = "Launch Terminal";
+      };
+
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Super>e";
+        command = "nautilus";
+        name = "Launch File Explorer";
+      };
     };
 
     home.file.".ssh/config".source =
