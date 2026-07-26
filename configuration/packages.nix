@@ -1,11 +1,9 @@
 { config, pkgs, lib, ... }:
 
 let
-  # Prerequisite setup...
-  # sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-  # sudo nix-channel --update nixos-unstable
-  
-  unstable = import <nixos-unstable> {
+  # Keep most packages on the active nixos channel (unstable), but
+  # pull qgis from stable while unstable's qscintilla/py3.14 build is broken.
+  stable = import <nixos-stable> {
     system = pkgs.stdenv.hostPlatform.system;
     config.allowUnfree = true;
   };
@@ -40,8 +38,8 @@ in
     openssl
     htop
     isd
-    unstable.atuin
-    unstable.tailscale
+    atuin
+    tailscale
     gparted
     tldr
     smartmontools
@@ -54,25 +52,25 @@ in
     socat
 
     # dev
-    unstable.vscode
+    vscode
     meld
     postman
     docker-compose
     python3
-    unstable.uv
+    uv
     jq yq
     gh
     go
     gomplate
     lazydocker
     lazygit
-    qgis
+    stable.qgis
 
     # kubernetes
     kubectl
     kustomize
     kubernetes-helm
-    unstable.k9s
+    k9s
     k3d
     kind
     pluto

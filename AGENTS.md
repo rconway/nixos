@@ -40,6 +40,12 @@
 - Portable profile packages live in `rconway/flake.nix` as `packages.x86_64-linux.rconway`.
 - Flake version metadata uses short git revision when available.
 
+## Channel And Pinning Notes
+- Root channels are expected to include `nixos` (unstable), `nixos-stable` (26.05), and `nixos-unstable` (unstable alias).
+- `configuration/packages.nix` should treat `pkgs` as unstable by default via the `nixos` channel.
+- `qgis` is intentionally pinned to `nixos-stable` due to unstable `qscintilla-qt6` build failures with Python 3.14.
+- `configuration/home-manager.nix` currently imports Home Manager from `master`.
+
 ## Common Profile Commands (From Repo Docs)
 - `nix flake update --flake <path>/nixos/rconway`
 - `nix profile add ~/nixos/rconway#rconway`
