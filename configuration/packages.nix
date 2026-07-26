@@ -27,6 +27,7 @@ in
     typora
     gnome-software
     go2tv
+    onlyoffice-desktopeditors
 
     # insync
     insync
