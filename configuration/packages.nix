@@ -76,4 +76,6 @@ in
     pluto
     rke
   ];
+
+  programs.direnv.enable = true;
 }
