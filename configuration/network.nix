@@ -9,4 +9,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # NordVPN
+  services.nordvpn.enable = true;
+  networking.firewall.checkReversePath = "loose";
 }

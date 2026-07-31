@@ -55,7 +55,7 @@
     uid = 1000;
     group = "rconway";
     description = "Richard Conway";
-    extraGroups = [ "networkmanager" "wheel" "docker" "users" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "users" "nordvpn" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
