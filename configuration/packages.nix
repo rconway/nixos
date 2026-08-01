@@ -26,6 +26,7 @@ in
     gnome-software
     go2tv
     onlyoffice-desktopeditors
+    stable.vaults
 
     # insync
     insync
