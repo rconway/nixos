@@ -14,6 +14,7 @@
       ./printing.nix
       ./data-share.nix
       ./tailscale.nix
+      ./dns-overrides.nix
       ./packages.nix
       ./gnome-extensions.nix
       ./home-manager.nix
