@@ -46,6 +46,7 @@ in
     smartmontools
     nvd
     duf
+    dust
 
     # GitHub Copilot wants these...
     ripgrep
