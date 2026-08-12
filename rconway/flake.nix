@@ -40,6 +40,7 @@
           pkgs.kubernetes-helm
           pkgs.kustomize
           pkgs.gomplate
+          pkgs.direnv
         ];
       };
     };
