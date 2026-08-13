@@ -42,6 +42,8 @@
           pkgs.kustomize
           pkgs.gomplate
           pkgs.direnv
+          pkgs.jq
+          pkgs.yq
         ];
       };
     };
