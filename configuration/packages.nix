@@ -27,6 +27,7 @@ in
     go2tv
     onlyoffice-desktopeditors
     stable.vaults
+    omnissa-horizon-client
 
     # insync
     insync
