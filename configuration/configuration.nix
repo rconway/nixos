@@ -12,6 +12,7 @@
       ./sudo.nix
       ./gnome.nix
       ./printing.nix
+      ./fonts.nix
       ./data-share.nix
       ./tailscale.nix
       ./dns-overrides.nix
