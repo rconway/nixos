@@ -7,6 +7,7 @@
   imports =
     [
       ./kernel.nix
+      ./bluetooth.nix
       ./network.nix
       ./locale.nix
       ./sudo.nix
