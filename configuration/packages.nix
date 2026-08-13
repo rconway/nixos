@@ -65,6 +65,7 @@ in
     gh
     go
     gomplate
+    s3cmd
     lazydocker
     lazygit
     stable.qgis
