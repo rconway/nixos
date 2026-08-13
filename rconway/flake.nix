@@ -32,6 +32,7 @@
           pkgs.lazydocker
           pkgs.lazygit
           pkgs.duf
+          pkgs.dust
           pkgs.k3d
           pkgs.k9s
           pkgs.gotop
