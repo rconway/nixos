@@ -28,6 +28,7 @@ in
     onlyoffice-desktopeditors
     stable.vaults
     omnissa-horizon-client
+    mpv
 
     # insync
     insync
