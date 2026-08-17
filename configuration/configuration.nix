@@ -48,6 +48,12 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.openssh.settings = {
+    PermitRootLogin = "no";
+    PubkeyAuthentication = true;
+    PasswordAuthentication = false;
+    KbdInteractiveAuthentication = false;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
