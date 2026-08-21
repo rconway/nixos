@@ -64,6 +64,7 @@ in
     uv
     jq yq
     gh
+    gcc
     go
     gomplate
     s3cmd
