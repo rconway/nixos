@@ -28,6 +28,11 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  zramSwap = {
+    enable = true;
+    memoryPercent = 25;
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
