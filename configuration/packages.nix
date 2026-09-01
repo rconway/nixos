@@ -67,6 +67,7 @@ in
     gcc
     go
     gomplate
+    gettext
     s3cmd
     lazydocker
     lazygit
