@@ -20,6 +20,7 @@
       ./packages.nix
       ./gnome-extensions.nix
       ./home-manager.nix
+      ./nix-ld.nix
     ];
 
   # Firmware safety net - if needed

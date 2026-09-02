@@ -18,6 +18,16 @@ in
   in
   {
     # home.packages = [ pkgs.atool pkgs.httpie ];
+
+    # nix-ld only sets NIX_LD_LIBRARY_PATH, which is consulted by the special
+    # nix-ld loader for foreign top-level binaries. Nix-built interpreters
+    # (e.g. a venv's python) use their own dynamic linker, which only looks at
+    # the standard LD_LIBRARY_PATH, so mirror it here for dlopen'd extensions
+    # like manylinux wheels (numpy, pyzmq, etc.) to find libs such as libstdc++.
+    home.sessionVariables = {
+      LD_LIBRARY_PATH = "$NIX_LD_LIBRARY_PATH:$LD_LIBRARY_PATH";
+    };
+
     programs.zsh = {
       enable = true;
       initContent = ''
