@@ -24,5 +24,6 @@
     util-linux
     xz
     systemd
+    expat
   ];
 }
