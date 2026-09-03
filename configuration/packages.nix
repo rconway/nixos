@@ -63,6 +63,7 @@ in
     python3
     uv
     jq yq
+    jwt-cli
     gh
     gcc
     go
