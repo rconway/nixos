@@ -61,6 +61,10 @@
     KbdInteractiveAuthentication = false;
   };
 
+  # Filesystem Hierarchy Standard (FHS) compatibility layer for NixOS.
+  # This is useful to execute shebangs on NixOS that assume hard coded locations in locations like /bin or /usr/bin etc.
+  services.envfs.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
