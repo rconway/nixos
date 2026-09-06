@@ -14,6 +14,7 @@
 
 ## Active NixOS Module Map
 - `kernel.nix`: kernel selection and kernel modules.
+- `bluetooth.nix`: BlueZ enablement and adapter auto-enable policy.
 - `network.nix`: NetworkManager enablement.
 - `locale.nix`: timezone, locales, keyboard layout.
 - `sudo.nix`: sudo rules.
@@ -21,15 +22,21 @@
 - `printing.nix`: CUPS + static printer definition.
 - `data-share.nix`: optional `/home/rconway/data` mount + Samba + prep service.
 - `tailscale.nix`: resolved + resolv.conf fix unit + tailscale.
+- `dns-overrides.nix`: static DNS overrides.
 - `packages.nix`: host system packages.
 - `gnome-extensions.nix`: GNOME extension packages.
+- `home-manager.nix`: Home Manager module import (from `master`).
+- `nix-ld.nix`: nix-ld for running unpatched dynamic binaries.
+- `fonts.nix`: system font packages.
+- `libvirt.nix`: libvirtd/KVM + virt-manager + vagrant (for local VMs, e.g. sysbox testing).
 
 ## Operational Assumptions
 - Primary user/group: `rconway` with uid/gid 1000.
 - Sudo policy grants passwordless ALL for `rconway`.
-- Docker and OpenSSH are enabled.
+- Docker, libvirtd, and OpenSSH are enabled.
 - PipeWire is enabled; PulseAudio disabled.
-- Kernel package is `linuxPackages_zen`.
+- Kernel package is `linuxPackages_latest` (set in `kernel.nix`).
+- `rconway` is a member of the `libvirtd` group for passwordless VM management (e.g. vagrant-libvirt).
 
 ## Important Behavior Constraints
 - `data-share.nix` intentionally keeps mount optional (`nofail`) for hosts without that disk.
