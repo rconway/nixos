@@ -21,6 +21,7 @@
       ./gnome-extensions.nix
       ./home-manager.nix
       ./nix-ld.nix
+      ./libvirt.nix
     ];
 
   # Firmware safety net - if needed
@@ -74,7 +75,7 @@
     uid = 1000;
     group = "rconway";
     description = "Richard Conway";
-    extraGroups = [ "networkmanager" "wheel" "docker" "users" "nordvpn" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "users" "nordvpn" "libvirtd" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
