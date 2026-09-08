@@ -70,6 +70,7 @@ in
     gomplate
     gettext
     s3cmd
+    minio-client
     lazydocker
     lazygit
     stable.qgis
