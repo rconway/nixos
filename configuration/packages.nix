@@ -49,6 +49,7 @@ in
     nvd
     duf
     dust
+    killall
 
     # GitHub Copilot wants these...
     ripgrep
