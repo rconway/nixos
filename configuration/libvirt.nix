@@ -10,5 +10,15 @@
   environment.systemPackages = with pkgs; [
     vagrant
     virt-viewer
+
+    # Build deps for `vagrant plugin install vagrant-libvirt` (native ruby-libvirt gem extension).
+    pkg-config
+    libvirt
+    gnumake
+    ruby
   ];
+
+  #----------------------------------------------------------------------------------------------------
+  # NOTE: Will need to manually run `vagrant plugin install vagrant-libvirt` after the system is built.
+  #----------------------------------------------------------------------------------------------------
 }
