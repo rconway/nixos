@@ -21,7 +21,7 @@
       ./gnome-extensions.nix
       ./home-manager.nix
       ./nix-ld.nix
-      ./libvirt.nix
+      ./virtualisation.nix
     ];
 
   # Firmware safety net - if needed
