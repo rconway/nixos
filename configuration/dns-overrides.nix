@@ -25,6 +25,13 @@ in
   # Route only override domains to local dnsmasq via resolved delegates.
   services.resolved = {
     enable = true;
+
+    settings = {
+      Resolve = {
+        LLMNR = "no";
+      };
+    };
+
     dnsDelegates = builtins.listToAttrs (
       map (domain: {
         name = domain;
