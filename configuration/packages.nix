@@ -76,6 +76,7 @@ in
     lazygit
     stable.qgis
     distrobox
+    drawio
 
     # kubernetes
     kubectl
