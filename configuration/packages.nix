@@ -75,6 +75,7 @@ in
     lazydocker
     lazygit
     stable.qgis
+    distrobox
 
     # kubernetes
     kubectl
