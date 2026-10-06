@@ -50,6 +50,7 @@ in
     duf
     dust
     killall
+    wl-clipboard
 
     # GitHub Copilot wants these...
     ripgrep
