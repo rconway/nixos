@@ -1,6 +1,15 @@
 { config, pkgs, lib, ... }:
 
 {
+  # Enable Docker support
+  virtualisation.docker.enable = true;
+
+  # Enable Podman support and configure container registries
+  virtualisation.podman.enable = true;
+  virtualisation.containers.registries.settings = {
+    search = [ "docker.io" ];
+  };
+
   # VirtualBox host support
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "rconway" ];

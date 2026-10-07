@@ -105,10 +105,6 @@
 
   programs.gnome-terminal.enable = true;
 
-  virtualisation.docker.enable = true;
-  virtualisation.podman.enable = true;
-  virtualisation.containers.registries.search = [ "docker.io" ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
