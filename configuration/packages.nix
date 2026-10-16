@@ -51,6 +51,7 @@ in
     dust
     killall
     wl-clipboard
+    gocryptfs
 
     # GitHub Copilot wants these...
     ripgrep
