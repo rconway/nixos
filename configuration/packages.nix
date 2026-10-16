@@ -52,6 +52,7 @@ in
     killall
     wl-clipboard
     gocryptfs
+    chafa
 
     # GitHub Copilot wants these...
     ripgrep
