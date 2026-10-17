@@ -53,6 +53,7 @@ in
     wl-clipboard
     gocryptfs
     chafa
+    intel-gpu-tools
 
     # GitHub Copilot wants these...
     ripgrep
