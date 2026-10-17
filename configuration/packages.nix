@@ -80,6 +80,7 @@ in
     stable.qgis
     distrobox
     drawio
+    nodejs
 
     # kubernetes
     kubectl
