@@ -22,7 +22,7 @@
       ./home-manager.nix
       ./nix-ld.nix
       ./virtualisation.nix
-      ./jellyfin.nix
+      # ./jellyfin.nix
     ];
 
   # Firmware safety net - if needed
