@@ -12,6 +12,19 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Global overlay to patch the base VS Code package before it gets wrapped by vscode-fhs
+  nixpkgs.overlays = [
+    (final: prev: {
+      vscode = prev.vscode.overrideAttrs (oldAttrs: {
+        postFixup = (oldAttrs.postFixup or "") + ''
+          echo "Applying executable permissions patch to bundled Copilot binaries..."
+          find $out/lib/vscode/ -type f -name "copilot-runtime" -exec chmod +x {} \; 2>/dev/null || true
+          find $out/lib/vscode/ -type f -name "*.node" -exec chmod +x {} \; 2>/dev/null || true
+        '';
+      });
+    })
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -61,13 +74,15 @@ in
     socat
 
     # dev
-    vscode
+    vscode-fhs
+    zed-editor
     meld
     postman
     docker-compose
     python3
     uv
-    jq yq
+    jq 
+    yq
     jwt-cli
     gh
     gcc
