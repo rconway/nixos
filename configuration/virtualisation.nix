@@ -11,11 +11,15 @@
   };
 
   # VirtualBox host support
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "rconway" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "rconway" ];
 
   # libvirt/KVM stack for local VMs (used by vagrant-libvirt for sysbox testing).
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    onShutdown = "shutdown";  # ACPI shutdown of guests instead of suspend
+    onBoot = "ignore";        # don't autostart; let vagrant do it
+  };
   virtualisation.spiceUSBRedirection.enable = true;
   programs.virt-manager.enable = true;
 
