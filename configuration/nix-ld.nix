@@ -10,6 +10,8 @@
 {
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
+    # Common runtime dependencies for unpatched command-line tools and native
+    # language extensions.
     stdenv.cc.cc # libstdc++.so.6 - needed by numpy, pyzmq, etc.
     zlib
     zstd
@@ -25,5 +27,34 @@
     xz
     systemd
     expat
+    libffi
+    libxcrypt-legacy
+    sqlite
+    ncurses
+    readline
+    # Docker/Kubernetes CLIs generally need no extra shared libraries; daemon
+    # configuration is handled separately from nix-ld.
+
+    # GUI and graphics libraries used by editor tools and prebuilt developer
+    # applications.
+    glib
+    gtk2
+    gtk3
+    nspr
+    nss
+    libGL
+    libdrm
+    libgbm
+    libxkbcommon
+    libx11
+    libxcomposite
+    libxdamage
+    libxext
+    libxfixes
+    libxi
+    libxrandr
+    libxrender
+    libxtst
+    libxcb
   ];
 }
