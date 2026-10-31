@@ -24,7 +24,8 @@
   programs.virt-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
-    vagrant
+    # vagrant - skipping libguestfs dependency which had a nix package issue
+    (vagrant.override { libguestfs = emptyDirectory; })
     virt-viewer
 
     # Build deps for `vagrant plugin install vagrant-libvirt` (native ruby-libvirt gem extension).
