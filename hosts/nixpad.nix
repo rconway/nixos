@@ -9,6 +9,7 @@
     [
       /etc/nixos/hardware-configuration.nix  # Include the results of the hardware scan.
       ../configuration/configuration.nix
+      ../optional/ollama.nix
     ];
 
   # Bootloader.
