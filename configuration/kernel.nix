@@ -3,6 +3,8 @@
 {
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages;
+  # boot.kernelPackages = pkgs.linuxPackages_7_2;
 
   boot.kernelModules = [
     # 🔧 Core networking and container support
