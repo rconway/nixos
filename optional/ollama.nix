@@ -11,12 +11,6 @@
     };
   };
 
-  # Keep Ollama installed and configured, but start it only on demand with
-  # `sudo systemctl start ollama`.
-  systemd.services.ollama.wantedBy = lib.mkForce [ ];
-  systemd.services.ollama-model-loader.wantedBy =
-    lib.mkForce [ "ollama.service" ];
-
   environment.systemPackages = with pkgs; [
     ollama-vulkan
     opencode
