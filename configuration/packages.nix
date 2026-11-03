@@ -78,7 +78,6 @@ in
 
     # dev
     vscode-fhs
-    zed-editor
     meld
     postman
     docker-compose
