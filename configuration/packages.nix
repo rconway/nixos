@@ -47,8 +47,8 @@ in
     mpv
 
     # insync
-    insync
-    insync-nautilus
+    stable.insync
+    stable.insync-nautilus
 
     # utils
     efibootmgr
