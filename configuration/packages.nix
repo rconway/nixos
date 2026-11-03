@@ -12,6 +12,9 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # onlyoffice-desktopeditors and nix-ld still depend on gtk2, which nixpkgs marks broken.
+  nixpkgs.config.problems.handlers."gtk+".broken = "warn";
+
   # Global overlay to patch the base VS Code package before it gets wrapped by vscode-fhs
   nixpkgs.overlays = [
     (final: prev: {
