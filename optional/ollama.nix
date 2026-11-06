@@ -13,7 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     ollama-vulkan
-    opencode
+    # opencode  # commented out due to build error
   ];
 
   home-manager.users.rconway.home.file.".config/opencode/opencode.json".text =
