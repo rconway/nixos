@@ -53,15 +53,6 @@
   };
 
   services.fwupd.enable = true;
-  services.netdata = {
-    enable = true;
-    package = pkgs.netdata.override {
-      withCloudUi = true;
-      fetchzip = args: pkgs.fetchzip (args // {
-        hash = "sha256-Dv/xc2FrviddlV3FxAvBCVmaqWU8MsRQjf3qGpLRfW8=";
-      });
-    };
-  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
