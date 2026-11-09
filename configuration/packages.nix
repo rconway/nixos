@@ -45,6 +45,7 @@ in
     stable.vaults
     omnissa-horizon-client
     mpv
+    fragments
 
     # insync
     stable.insync
