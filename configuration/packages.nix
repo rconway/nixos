@@ -95,7 +95,7 @@ in
     s3cmd
     lazydocker
     lazygit
-    stable.qgis
+    qgis
     distrobox
     drawio
     nodejs
