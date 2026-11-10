@@ -71,6 +71,7 @@ in
     gocryptfs
     chafa
     intel-gpu-tools
+    handbrake
 
     # GitHub Copilot wants these...
     ripgrep
