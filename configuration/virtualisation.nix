@@ -41,3 +41,4 @@
     # quickemu for managing virtual machines easily
     quickemu
   ];
+}
