@@ -12,6 +12,10 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Ventoy ships unverifiable binary blobs; explicitly accepted.
+  nixpkgs.config.allowInsecurePredicate = pkg:
+    lib.hasPrefix "ventoy-gtk3" (lib.getName pkg);
+
   # onlyoffice-desktopeditors and nix-ld still depend on gtk2, which nixpkgs marks broken.
   nixpkgs.config.problems.handlers."gtk+".broken = "warn";
 
@@ -72,6 +76,7 @@ in
     chafa
     intel-gpu-tools
     handbrake
+    ventoy-full-gtk
 
     # GitHub Copilot wants these...
     ripgrep
