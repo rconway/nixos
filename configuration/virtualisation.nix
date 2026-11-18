@@ -33,9 +33,11 @@
     libvirt
     gnumake
     ruby
-  ];
 
-  #----------------------------------------------------------------------------------------------------
-  # NOTE: Will need to manually run `vagrant plugin install vagrant-libvirt` after the system is built.
-  #----------------------------------------------------------------------------------------------------
-}
+    #----------------------------------------------------------------------------------------------------
+    # NOTE: Will need to manually run `vagrant plugin install vagrant-libvirt` after the system is built.
+    #----------------------------------------------------------------------------------------------------
+
+    # quickemu for managing virtual machines easily
+    quickemu
+  ];
